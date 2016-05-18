@@ -22,10 +22,6 @@
 # m h  dom mon dow   command
 
 
-0 * * * * sh /home/pi/Desktop/GardenAutomation/Dev/MainCode/scripts/Main.sh >> /home/pi/Desktop/GardenAutomation/Dev/MainCode/logs/Main.log 2>&1 
-1 * * * * sudo python /home/pi/Desktop/GardenAutomation/Dev/MainCode/python/Testbutton.py >> /home/pi/Desktop/GardenAutomation/Dev/MainCode/logs/Testbutton.log 2>&1
-1 * * * * sudo python /home/pi/Desktop/GardenAutomation/Dev/MainCode/python/Runbutton.py >> /home/pi/Desktop/GardenAutomation/Dev/MainCode/logs/Runbutton.log 2>&1
-* * * * * sudo python /home/pi/Desktop/admin/ShutdownButton.py
-* * * * * sudo python /home/pi/Desktop/GardenAutomation/Dev/MainCode/python/RunSenor.py
-* * * * * sudo python /home/pi/Desktop/GardenAutomation/Dev/MainCode/python/grapth.py
-5 * * * * sh /home/pi/Desktop/GardenAutomation/Dev/MainCode/scripts/Website.sh >> /home/pi/Desktop/GardenAutomation/Dev/MainCode/logs/Website.log 2>&1
+* * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/RunSenor.py >> /home/pi/Desktop/Logs/TempSensors.log 2>&1
+* * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
+0 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Senors.sh >> /home/pi/Desktop/Logs/Senors.log 2>&1
