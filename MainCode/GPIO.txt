@@ -1,0 +1,9 @@
+PIN
+
+4 - Temp sensors
+
+11 - Rain test
+35 - Run water button
+37 - Open Relay
+38 - Run test button (and water)
+40 - Water test
