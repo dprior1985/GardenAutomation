@@ -129,9 +129,9 @@ t = datetime.datetime(2012, 2, 23, 0, 0)
 #	Avgtest = 0
 
 #if (float(Avgtest) < 14):
-#	color = "Lightblue"
+color = "Lightblue"
 #if (float(Avgtest) >= 14):
-color = "PeachPuff"
+# color = "PeachPuff"
 	
  
 website="""
