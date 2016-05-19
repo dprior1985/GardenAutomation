@@ -1,2 +1,2 @@
-su crontab -r
-su crontab /home/pi/Desktop/GardenAutomation/mycrons.txt
+sudo  crontab -r
+sudo crontab /home/pi/Desktop/GardenAutomation/mycrons.txt
