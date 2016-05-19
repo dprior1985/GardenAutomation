@@ -26,5 +26,6 @@
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/RunSenor.py >> /home/pi/Desktop/Logs/TempSensors.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
 0 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Senors.sh >> /home/pi/Desktop/Logs/Senors.log 2>&1
-15 0 * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/DeleteSenorData.py  >> /home/pi/Desktop/Logs/DeleteSenorData.log >&1
-20 * * * * sh /home/pi/Desktop/GardenAutomation/InstallCrontabs.txt >> /home/pi/Desktop/Logs/InstallCrontabs.log 2>&10 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Senors.sh >> /home/pi/Desktop/Logs/Senors.log 2>&1
+15 0 * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/DeleteSenorData.py  >> /home/pi/Desktop/Logs/DeleteSenorData.log 2>&1
+20 * * * * sh /home/pi/Desktop/GardenAutomation/InstallCrontabs.txt >> /home/pi/Desktop/Logs/InstallCrontabs.log 2>&1
+
