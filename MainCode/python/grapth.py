@@ -30,7 +30,7 @@ font = {'family' : 'normal',
 matplotlib.rc('font', **font)
 
 
-cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 1' order by SenorLogId; ;" )
+cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 1' order by DateNow;" )
 for row in cursor.fetchall():
 
 	x = (row[1])
@@ -38,7 +38,7 @@ for row in cursor.fetchall():
 	x1.append(x)
 	y1.append(y)
 
-cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' order by SenorLogId; ;" )
+cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' order by DateNow;" )
 
 for row in cursor.fetchall():
 
@@ -66,7 +66,7 @@ pyplot.savefig('/var/www/Graph1.png')
 pyplot.clf()
 
 
-cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 1' and subtime(now(), '24:00:00') <= DateNow order by SenorLogId; ;" )
+cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 1' and subtime(now(), '24:00:00') <= DateNow order by DateNow; " )
 for row in cursor.fetchall():
 
 	xa = (row[1])
@@ -74,7 +74,7 @@ for row in cursor.fetchall():
 	x11.append(xa)
 	y11.append(ya)
 
-cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '24:00:00') <= DateNow order by SenorLogId; ;" )
+cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '24:00:00') <= DateNow order by DateNow; " )
 
 for row in cursor.fetchall():
 
