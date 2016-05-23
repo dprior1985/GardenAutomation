@@ -1,4 +1,5 @@
 import datetime
+from datetime import date
 import MySQLdb
 import time, sys
 import numpy
@@ -8,7 +9,7 @@ import calendar
 db = MySQLdb.connect("localhost","danny","danny123","MYGARDEN" )
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
-my_date = datetime.today()
+my_date = date.today()
 
 vLastTimeWaterData = "000";
 
