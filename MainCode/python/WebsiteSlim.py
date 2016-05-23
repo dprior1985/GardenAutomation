@@ -134,19 +134,19 @@ t = datetime.datetime(2012, 2, 23, 0, 0)
 #color = "Lightblue"
 #if (float(Avgtest) >= 14):
 
-if (calendar.day_name[my_date.weekday()] == "Monday")
+if (calendar.day_name[my_date.weekday()] == "Monday"):
 	color = "PaleGoldenrod"
-if (calendar.day_name[my_date.weekday()] == "Tuesday")
+if (calendar.day_name[my_date.weekday()] == "Tuesday"):
 	color = "Lavender"	
-if (calendar.day_name[my_date.weekday()] == "Wednesday")
+if (calendar.day_name[my_date.weekday()] == "Wednesday"):
 	color = "PaleTurquoise"
-if (calendar.day_name[my_date.weekday()] == "Thursday")
+if (calendar.day_name[my_date.weekday()] == "Thursday"):
 	color = "Cornsilk"
-if (calendar.day_name[my_date.weekday()] == "Friday")
+if (calendar.day_name[my_date.weekday()] == "Friday"):
 	color = "BlanchedAlmond"	
-if (calendar.day_name[my_date.weekday()] == "Saturday")
+if (calendar.day_name[my_date.weekday()] == "Saturday"):
 	color = "LightCoral"
-if (calendar.day_name[my_date.weekday()] == "Sunday")
+if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
 	
