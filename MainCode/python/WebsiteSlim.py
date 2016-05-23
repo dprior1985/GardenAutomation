@@ -2,11 +2,13 @@ import datetime
 import MySQLdb
 import time, sys
 import numpy
+import calendar
 
 # Open database connection
 db = MySQLdb.connect("localhost","danny","danny123","MYGARDEN" )
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
+my_date = datetime.today()
 
 vLastTimeWaterData = "000";
 
@@ -131,9 +133,25 @@ t = datetime.datetime(2012, 2, 23, 0, 0)
 #if (float(Avgtest) < 14):
 #color = "Lightblue"
 #if (float(Avgtest) >= 14):
-color = "PeachPuff"
+
+if (calendar.day_name[my_date.weekday()] == "Monday")
+	color = "PaleGoldenrod"
+if (calendar.day_name[my_date.weekday()] == "Tuesday")
+	color = "Lavender"	
+if (calendar.day_name[my_date.weekday()] == "Wednesday")
+	color = "PaleTurquoise"
+if (calendar.day_name[my_date.weekday()] == "Thursday")
+	color = "Cornsilk"
+if (calendar.day_name[my_date.weekday()] == "Friday")
+	color = "BlanchedAlmond"	
+if (calendar.day_name[my_date.weekday()] == "Saturday")
+	color = "LightCoral"
+if (calendar.day_name[my_date.weekday()] == "Sunday")
+	color = "PeachPuff"
 	
- 
+	
+	
+	
 website="""
 <!DOCTYPE html>
 <html>
@@ -145,10 +163,9 @@ website="""
 </head>
 <body bgcolour = "%s" >
 <h2>Garden System:</h2>
-<a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX3">Click here for current weather</a><br>
 <h3>Last time Watered (GMT):   %s</h3>
-<img src='Graph1.png' alt='Graph1' style='width:1000px;height:500px;'><br>
-<img src='Graph2.png' alt='Graph2' style='width:1000px;height:500px;'><br>
+<img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'>
+<img src='Graph2.png' alt='Graph2' style='width:500px;height:250px;'><br>
 <br>
 
 
@@ -188,7 +205,7 @@ website="""
     <td>%s</td>
   </tr>
   <tr>
-    <th>Inside Bottle - Temp Sensor 2</th>
+    <th>With Pi - Temp Sensor 2</th>
     <td>%s</td>
     <th>Light Sensor 2</th>
     <td>%s</td>
