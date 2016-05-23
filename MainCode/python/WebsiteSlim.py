@@ -145,10 +145,9 @@ website="""
 </head>
 <body bgcolour = "%s" >
 <h2>Garden System:</h2>
-<a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX3">Click here for current weather</a><br>
 <h3>Last time Watered (GMT):   %s</h3>
-<img src='Graph1.png' alt='Graph1' style='width:1000px;height:500px;'><br>
-<img src='Graph2.png' alt='Graph2' style='width:1000px;height:500px;'><br>
+<img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'>
+<img src='Graph2.png' alt='Graph2' style='width:500px;height:250px;'><br>
 <br>
 
 
@@ -188,7 +187,7 @@ website="""
     <td>%s</td>
   </tr>
   <tr>
-    <th>Inside Bottle - Temp Sensor 2</th>
+    <th>With Pi - Temp Sensor 2</th>
     <td>%s</td>
     <th>Light Sensor 2</th>
     <td>%s</td>
