@@ -217,7 +217,7 @@ def decide():
 	   	db.rollback()
 		
 #if temp >= 20  then water
-	sq53 =  "update RunNumber set Water = 6 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=20 nd Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = 6 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=20 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
