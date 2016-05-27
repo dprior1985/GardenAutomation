@@ -318,7 +318,7 @@ def decide():
 	   	db.rollback()
 		
 #if not watered in 24 hours water
-	sq53 =  "update RunNumber set Water = 3 where Water <= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water >= 1 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) e);" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = 3 where Water <= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) e);" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
