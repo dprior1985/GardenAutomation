@@ -164,13 +164,14 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
 	
-vLastWaterLogicDesc ="TEST TEST TEST"	
+	vLastWaterLogicDesc ="Not Watered"
+
 if (vLastWaterLogic == "1" ):
-	vLastWaterLogicDesc =""
+	vLastWaterLogicDesc ="error setting 1 not used"
 if (vLastWaterLogic == "2" ):
 	vLastWaterLogicDesc ="water not exists water"
 if (vLastWaterLogic == "3" ):
-	vLastWaterLogicDesc =""
+	vLastWaterLogicDesc ="Not watered in 24 hours"
 if (vLastWaterLogic == "4" ):
 	vLastWaterLogicDesc ="temp >= 12 < 16 then water"
 if (vLastWaterLogic == "5" ):
@@ -178,7 +179,7 @@ if (vLastWaterLogic == "5" ):
 if (vLastWaterLogic == "6" ):
 	vLastWaterLogicDesc ="temp >= 20  then water"
 if (vLastWaterLogic == "7" ):
-	vLastWaterLogicDesc =""	
+	vLastWaterLogicDesc ="error setting 7 not used"	
 	
 	
 website="""
@@ -265,7 +266,7 @@ website="""
 ,vLastTimeWaterData
 ,vLastCheckDateData
 ,vLastCheckResultData
-,vLastWaterLogic
+,vLastWaterLogicDesc
 ,vWaterExistsData
 ,vRainData 
 ,vTempsensor1
