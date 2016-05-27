@@ -13,7 +13,6 @@ my_date = date.today()
 
 vLastTimeWaterData = "000";
 vLastWaterLogic = "";
-vLastWaterLogicDesc = "";
 
 
 vLastCheckDateData = "111";
@@ -164,7 +163,7 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
 	
-	vLastWaterLogicDesc ="Not Watered"
+vLastWaterLogicDesc ="Not Watered"
 
 if (vLastWaterLogic == "1" ):
 	vLastWaterLogicDesc ="error setting 1 not used"
@@ -266,7 +265,7 @@ website="""
 ,vLastTimeWaterData
 ,vLastCheckDateData
 ,vLastCheckResultData
-,vLastWaterLogicDesc
+,vLastWaterLogic
 ,vWaterExistsData
 ,vRainData 
 ,vTempsensor1
