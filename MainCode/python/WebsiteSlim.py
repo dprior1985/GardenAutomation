@@ -163,19 +163,19 @@ if (calendar.day_name[my_date.weekday()] == "Saturday"):
 if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
-if (vLastWaterLogic == "1" )
+if (vLastWaterLogic == "1" ):
 	vLastWaterLogicDesc =""
-if (vLastWaterLogic == "2" )
+if (vLastWaterLogic == "2" ):
 	vLastWaterLogicDesc ="water not exists water"
-if (vLastWaterLogic == "3" )
+if (vLastWaterLogic == "3" ):
 	vLastWaterLogicDesc =""
-if (vLastWaterLogic == "4" )
+if (vLastWaterLogic == "4" ):
 	vLastWaterLogicDesc ="temp >= 12 < 16 then water"
-if (vLastWaterLogic == "5" )
+if (vLastWaterLogic == "5" ):
 	vLastWaterLogicDesc ="temp >= 16  < 20 then water"
-if (vLastWaterLogic == "6" )
+if (vLastWaterLogic == "6" ):
 	vLastWaterLogicDesc ="temp >= 20  then water"
-if (vLastWaterLogic == "7" )
+if (vLastWaterLogic == "7" ):
 	vLastWaterLogicDesc =""	
 	
 	
