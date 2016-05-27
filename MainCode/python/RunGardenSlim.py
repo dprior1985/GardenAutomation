@@ -90,29 +90,29 @@ def main():
 	if (Water >= 1):
 		print "openrelay classmethod"
 		print(datetime.datetime.now())
-		if (Water = 1):	
+		if (Water == 1):	
 			openrelay.Run(0)
 		
-		if (Water = 2):	
+		if (Water == 2):	
 			openrelay.Run(20)
 		
-		if (Water = 3):	
+		if (Water == 3):	
 			openrelay.Run(60)
 		
-		if (Water = 4):	
+		if (Water == 4):	
 			openrelay.Run(30)
 		
-		if (Water = 5):	
+		if (Water == 5):	
 			openrelay.Run(30)
 			time.sleep(10)
 			openrelay.Run(10)
 		
-		if (Water = 6):	
+		if (Water == 6):	
 			openrelay.Run(30)
 			time.sleep(10)
 			openrelay.Run(20)
 		
-		if (Water = 7):	
+		if (Water == 7):	
 			openrelay.Run(0)			
 	if (Water == 0):
 		print('Not Active')
