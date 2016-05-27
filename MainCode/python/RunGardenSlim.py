@@ -304,8 +304,8 @@ def decide():
 	   	db.rollback()	
 	
 
-#if watered in last 1 hours dont water
-	sq53 =  "update RunNumber set Water = -6 where Water >= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water >= 1 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 1 ) e);" %  (int(RunNumber))
+#if watered in last 6 hours dont water
+	sq53 =  "update RunNumber set Water = -6 where Water >= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water >= 1 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 6 ) e);" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
@@ -314,21 +314,21 @@ def decide():
 	except:
 		print "-------------"
 		print sq53
-		print "if not watered in 24 hours water"
+		print "if not watered in 6 hours water"
 	   	db.rollback()
 		
-#if not watered in 24 hours water
-	sq53 =  "update RunNumber set Water = 3 where Water <= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) e);" %  (int(RunNumber))
-	try:
-	   # Execute the SQL command
-   		cursor.execute(sq53)
-	   # Commit your changes in the database
-		db.commit()
-	except:
-		print "-------------"
-		print sq53
-		print "if not watered in 24 hours water"
-	   	db.rollback()
+# #if not watered in 24 hours water
+	# sq53 =  "update RunNumber set Water = 3 where Water <= 0 and  RunnumberId in ( select %s from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) e);" %  (int(RunNumber))
+	# try:
+	   # # Execute the SQL command
+   		# cursor.execute(sq53)
+	   # # Commit your changes in the database
+		# db.commit()
+	# except:
+		# print "-------------"
+		# print sq53
+		# print "if not watered in 24 hours water"
+	   	# db.rollback()
 		
 		
 
