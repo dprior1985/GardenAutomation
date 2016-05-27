@@ -12,6 +12,9 @@ cursor = db.cursor()
 my_date = date.today()
 
 vLastTimeWaterData = "000";
+vLastWaterLogic = "";
+vLastWaterLogicDesc = "";
+
 
 vLastCheckDateData = "111";
 vLastCheckResultData = "222";
@@ -33,6 +36,16 @@ vforecast4 = "";
 LightAvg = []
 vLightsensor1 = "";
 vLightsensor2 = "";
+
+
+
+
+
+cursor.execute("select Water from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
+for row in cursor.fetchall():
+
+	vLastWaterLogic = (row[0])
+
 
 cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'light sensor 1' ;" )
 for row in cursor.fetchall():
@@ -150,7 +163,20 @@ if (calendar.day_name[my_date.weekday()] == "Saturday"):
 if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
-	
+if (vLastWaterLogic == "1" )
+	vLastWaterLogicDesc =""
+if (vLastWaterLogic == "2" )
+	vLastWaterLogicDesc ="water not exists water"
+if (vLastWaterLogic == "3" )
+	vLastWaterLogicDesc =""
+if (vLastWaterLogic == "4" )
+	vLastWaterLogicDesc ="temp >= 12 < 16 then water"
+if (vLastWaterLogic == "5" )
+	vLastWaterLogicDesc ="temp >= 16  < 20 then water"
+if (vLastWaterLogic == "6" )
+	vLastWaterLogicDesc ="temp >= 20  then water"
+if (vLastWaterLogic == "7" )
+	vLastWaterLogicDesc =""	
 	
 	
 website="""
@@ -184,8 +210,8 @@ website="""
  <tr>
     <th>Watered</th>
     <td>%s</td>
-    <th></th>
-    <td></td>
+    <th>Water Logic Used</th>
+    <td>%s</td>
   </tr>
   <tr>
     <th>Water Present?</th>
@@ -237,6 +263,7 @@ website="""
 ,vLastTimeWaterData
 ,vLastCheckDateData
 ,vLastCheckResultData
+,vLastWaterLogicDesc
 ,vWaterExistsData
 ,vRainData 
 ,vTempsensor1
@@ -246,6 +273,7 @@ website="""
 ,vTempsensor3
 ,vTempsensor4
 ,vTempsensor5
+
 )
 
 
