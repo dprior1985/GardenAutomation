@@ -177,7 +177,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 	except:
-		print "failure with temp <14 "
+		print "failure with temp <12 "
 	   	db.rollback()
 
 #if water not exists water
@@ -201,7 +201,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 	except:
-		print "failure with temp <14 "
+		print "failure with temp >=12 < 16 then water "
 	   	db.rollback()
 
 #if temp >= 16  < 20 then water
@@ -213,7 +213,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 	except:
-		print "failure with temp <14 "
+		print "failure with temp >16  < 20 then water "
 	   	db.rollback()
 		
 #if temp >= 20  then water
@@ -225,7 +225,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 	except:
-		print "failure with temp <14 "
+		print "failure with temp >= 20  then water "
 	   	db.rollback()
 
 		
