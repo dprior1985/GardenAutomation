@@ -40,7 +40,7 @@ vLightsensor2 = "";
 
 
 
-cursor.execute("select Water from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
+cursor.execute("select cast(Water as char(50)) from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
 for row in cursor.fetchall():
 
 	vLastWaterLogic = (row[0])
