@@ -265,7 +265,7 @@ website="""
 ,vLastTimeWaterData
 ,vLastCheckDateData
 ,vLastCheckResultData
-,vLastWaterLogic
+,vLastWaterLogicDesc
 ,vWaterExistsData
 ,vRainData 
 ,vTempsensor1
