@@ -163,6 +163,8 @@ if (calendar.day_name[my_date.weekday()] == "Saturday"):
 if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
+	
+vLastWaterLogicDesc ="TEST TEST TEST"	
 if (vLastWaterLogic == "1" ):
 	vLastWaterLogicDesc =""
 if (vLastWaterLogic == "2" ):
@@ -263,7 +265,7 @@ website="""
 ,vLastTimeWaterData
 ,vLastCheckDateData
 ,vLastCheckResultData
-,vLastWaterLogicDesc
+,vLastWaterLogic
 ,vWaterExistsData
 ,vRainData 
 ,vTempsensor1
