@@ -165,6 +165,11 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	
 vLastWaterLogicDesc ="Not Watered"
 
+if (vLastWaterLogic == "-3" ):
+	vLastWaterLogicDesc ="Done Water bewteen 9PM and 6AM"
+if (vLastWaterLogic == "-6" ):
+	vLastWaterLogicDesc ="Dont water within 6 hurs of last water"
+
 if (vLastWaterLogic == "1" ):
 	vLastWaterLogicDesc ="error setting 1 not used"
 if (vLastWaterLogic == "2" ):
