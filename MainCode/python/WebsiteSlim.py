@@ -171,6 +171,8 @@ if (vLastWaterLogic == "-1" ):
 	vLastWaterLogicDesc ="NOT WATERED - <12 - toll cold"
 if (vLastWaterLogic == "-3" ):
 	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
+if (vLastWaterLogic == "-5" ):
+	vLastWaterLogicDesc ="NOT WATERED - Water exists"
 if (vLastWaterLogic == "-6" ):
 	vLastWaterLogicDesc ="NOT WATERED - Dont water within 6 hurs of last water"
 
