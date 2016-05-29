@@ -169,7 +169,7 @@ def decide():
 	global Water;
 
 #if temp < 12 then dont water
-	sq53 =  "update RunNumber set Water = 0 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = -1 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
