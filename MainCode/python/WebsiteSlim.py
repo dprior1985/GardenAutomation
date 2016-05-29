@@ -165,6 +165,8 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	
 vLastWaterLogicDesc =vLastWaterLogic
 
+if (vLastWaterLogic == "-1" ):
+	vLastWaterLogicDesc ="NOT WATERED - <12 - toll cold"
 if (vLastWaterLogic == "-3" ):
 	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
 if (vLastWaterLogic == "-6" ):
