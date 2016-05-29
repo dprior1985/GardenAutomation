@@ -163,7 +163,7 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 	color = "PeachPuff"
 	
 	
-vLastWaterLogicDesc ="Not Watered"
+vLastWaterLogicDesc =vLastWaterLogic
 
 if (vLastWaterLogic == "-3" ):
 	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
