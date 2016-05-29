@@ -166,24 +166,24 @@ if (calendar.day_name[my_date.weekday()] == "Sunday"):
 vLastWaterLogicDesc ="Not Watered"
 
 if (vLastWaterLogic == "-3" ):
-	vLastWaterLogicDesc ="Done Water bewteen 9PM and 6AM"
+	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
 if (vLastWaterLogic == "-6" ):
-	vLastWaterLogicDesc ="Dont water within 6 hurs of last water"
+	vLastWaterLogicDesc ="NOT WATERED - Dont water within 6 hurs of last water"
 
 if (vLastWaterLogic == "1" ):
-	vLastWaterLogicDesc ="error setting 1 not used"
+	vLastWaterLogicDesc ="WATERED - error setting 1 not used"
 if (vLastWaterLogic == "2" ):
-	vLastWaterLogicDesc ="water not exists water"
+	vLastWaterLogicDesc ="WATERED - water not exists water"
 if (vLastWaterLogic == "3" ):
-	vLastWaterLogicDesc ="Not watered in 24 hours"
+	vLastWaterLogicDesc ="WATERED - Not watered in 24 hours"
 if (vLastWaterLogic == "4" ):
-	vLastWaterLogicDesc ="temp >= 12 < 16 then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water"
 if (vLastWaterLogic == "5" ):
-	vLastWaterLogicDesc ="temp >= 16  < 20 then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water"
 if (vLastWaterLogic == "6" ):
-	vLastWaterLogicDesc ="temp >= 20  then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 20  then water"
 if (vLastWaterLogic == "7" ):
-	vLastWaterLogicDesc ="error setting 7 not used"	
+	vLastWaterLogicDesc ="WATERED - error setting 7 not used"	
 	
 	
 website="""
