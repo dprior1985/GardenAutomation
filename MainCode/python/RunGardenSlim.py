@@ -91,7 +91,7 @@ def main():
 		print "openrelay classmethod"
 		print(datetime.datetime.now())
 		if (Water == 1):	
-			openrelay.Run(0)
+			openrelay.Run(30)
 		
 		if (Water == 2):	
 			openrelay.Run(20)
@@ -168,8 +168,20 @@ def decide():
 
 	global Water;
 
+#Default to water
+	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog and RunNumberId = %s ;" %  (int(RunNumber))
+	
+	try:
+	   # Execute the SQL command
+   		cursor.execute(sq53)
+	   # Commit your changes in the database
+		db.commit()
+	except:
+		print "failure default to water"
+	   	db.rollback()
+
 #if temp < 12 then dont water
-	sq53 =  "update RunNumber set Water = -1 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = -1 where Water >= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
@@ -269,7 +281,7 @@ def decide():
 
 
 #if water exists water
-	sq53 =  "update RunNumber set Water = -5 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where ActionName = 'WaterExists' and Active = 1 and SaveData = 'Yes' ) and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = -5 where Water >= 0 and  RunnumberId in (select RunNumberId from ControlLog where ActionName = 'WaterExists' and Active = 1 and SaveData = 'Yes' ) and RunNumberId = %s ;" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
@@ -293,7 +305,7 @@ def decide():
 
 	
 #if before 6am or after 9PM dont watar
-	sq53 =  "update RunNumber set Water = -3 where  Water > 0 and (hour(now()) >= 21 or hour(now()) <= 5 ) and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = -3 where  Water >= 0 and (hour(now()) >= 21 or hour(now()) <= 5 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
@@ -305,7 +317,7 @@ def decide():
 	
 
 #if watered in last 6 hours dont water
-	sq53 =  "update RunNumber set Water = -6 where Water > 0 and  RunnumberId in ( select %s from (select * from RunNumber where Water >= 1 and timestampdiff(hour,now(),DateNow ) < 0 and timestampdiff(HOUR,DateNow,NOW()) >= -6 and date(now()) = date(DateNow))  e);" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = -6 where Water >= 0 and  RunnumberId in ( select %s from (select * from RunNumber where Water >= 1 and timestampdiff(hour,now(),DateNow ) < 0 and timestampdiff(HOUR,DateNow,NOW()) >= -6 and date(now()) = date(DateNow))  e);" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
