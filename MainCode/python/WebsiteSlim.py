@@ -174,7 +174,7 @@ if (vLastWaterLogic == "-3" ):
 if (vLastWaterLogic == "-5" ):
 	vLastWaterLogicDesc ="NOT WATERED - Water exists"
 if (vLastWaterLogic == "-6" ):
-	vLastWaterLogicDesc ="NOT WATERED - Dont water within 6 hurs of last water"
+	vLastWaterLogicDesc ="NOT WATERED - Dont water within 3 hours of last water"
 
 if (vLastWaterLogic == "1" ):
 	vLastWaterLogicDesc ="WATERED - error setting 1 not used"

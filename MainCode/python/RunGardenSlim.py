@@ -168,6 +168,7 @@ def decide():
 
 	global Water;
 
+	waterlogic = 1;
 #Default to water
 	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog and RunNumberId = %s ;" %  (int(RunNumber))
 	
@@ -176,6 +177,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = 1;
 	except:
 		print "failure default to water"
 	   	db.rollback()
@@ -188,6 +190,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = -1;
 	except:
 		print "failure with temp <12 "
 	   	db.rollback()
@@ -199,6 +202,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = 2;
 	except:
 		print "failure with water not exists"
 	   	db.rollback()
@@ -212,6 +216,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = 4;
 	except:
 		print "failure with temp >=12 < 16 then water "
 	   	db.rollback()
@@ -224,6 +229,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = 5;
 	except:
 		print "failure with temp >16  < 20 then water "
 	   	db.rollback()
@@ -236,6 +242,7 @@ def decide():
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = 6;
 	except:
 		print "failure with temp >= 20  then water "
 	   	db.rollback()
@@ -281,12 +288,14 @@ def decide():
 
 
 #if water exists water
+
 	sq53 =  "update RunNumber set Water = -5 where Water >= 0 and  RunnumberId in (select RunNumberId from ControlLog where ActionName = 'WaterExists' and Active = 1 and SaveData = 'Yes' ) and RunNumberId = %s ;" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = -5;
 	except:	
 		print "failure with water exists"
 	   	db.rollback()
@@ -305,28 +314,31 @@ def decide():
 
 	
 #if before 6am or after 9PM dont watar
-	sq53 =  "update RunNumber set Water = -3 where  Water >= 0 and (hour(now()) >= 21 or hour(now()) <= 5 ) and RunNumberId = %s ;" %  (int(RunNumber))
-	try:
-	   # Execute the SQL command
-   		cursor.execute(sq53)
-	   # Commit your changes in the database
-		db.commit()
-	except:
-		print "failure with before 6am or 9pm"
-	   	db.rollback()	
+	if (waterlogic <> 2):
+		sq53 =  "update RunNumber set Water = -3 where  Water >= 0 and (hour(now()) >= 21 or hour(now()) <= 5 ) and RunNumberId = %s ;" %  (int(RunNumber))
+		try:
+		   # Execute the SQL command
+			cursor.execute(sq53)
+		   # Commit your changes in the database
+			db.commit()
+			waterlogic = -3;
+		except:
+			print "failure with before 6am or 9pm"
+			db.rollback()	
 	
 
-#if watered in last 6 hours dont water
-	sq53 =  "update RunNumber set Water = -6 where Water >= 0 and  RunnumberId in ( select %s from (select * from RunNumber where Water >= 1 and cast(timestampdiff(hour,now(),DateNow ) as signed) < 0 and cast(timestampdiff(HOUR,NOW(),DateNow) as signed) >= -6 and date(now()) = date(DateNow))  e);" %  (int(RunNumber))
+#if watered in last 3 hours dont water
+	sq53 =  "update RunNumber set Water = -6 where Water >= 0 and  RunnumberId in ( select %s from (select * from RunNumber where Water >= 1 and cast(timestampdiff(hour,now(),DateNow ) as signed) <= 0 and cast(timestampdiff(HOUR,NOW(),DateNow) as signed) >= -3 and date(now()) = date(DateNow))  e);" %  (int(RunNumber))
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
 	   # Commit your changes in the database
 		db.commit()
+		waterlogic = -6;
 	except:
 		print "-------------"
 		print sq53
-		print "if not watered in 6 hours water"
+		print "if not watered in 3 hours water"
 	   	db.rollback()
 		
 # #if not watered in 24 hours water
