@@ -181,7 +181,7 @@ if (vLastWaterLogic == "1" ):
 if (vLastWaterLogic == "2" ):
 	vLastWaterLogicDesc ="WATERED - water not exists water"
 if (vLastWaterLogic == "3" ):
-	vLastWaterLogicDesc ="WATERED - Not watered in 24 hours"
+	vLastWaterLogicDesc ="WATERED - Not watered in 23 hours"
 if (vLastWaterLogic == "4" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water"
 if (vLastWaterLogic == "5" ):
@@ -189,8 +189,14 @@ if (vLastWaterLogic == "5" ):
 if (vLastWaterLogic == "6" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 20  then water"
 if (vLastWaterLogic == "7" ):
-	vLastWaterLogicDesc ="WATERED - error setting 7 not used"	
-	
+	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water and not in 23 hours"	
+if (vLastWaterLogic == "+" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water and not in 23 hours"	
+if (vLastWaterLogic == "9" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 20  then water and not in 23 hours"
+if (vLastWaterLogic == "10" ):
+	vLastWaterLogicDesc ="WATERED - Scheduled Water Time"
+
 	
 website="""
 <!DOCTYPE html>

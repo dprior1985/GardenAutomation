@@ -65,3 +65,25 @@ CREATE TABLE SenorLog
   PRIMARY KEY (SenorLogId)
 ) ;
 
+
+
+CREATE TABLE Schedule 
+(
+  ScheduleId int(11) NOT NULL AUTO_INCREMENT,
+  ScheduleName varchar(50) DEFAULT NULL,
+  Time int DEFAULT NULL,
+  PRIMARY KEY (ScheduleId)
+) ;
+
+
+
+
+INSERT INTO Schedule(ScheduleName,Time)
+VALUES ('Morning',8);
+
+INSERT INTO Schedule(ScheduleName,Time)
+VALUES ('Night',21);
+
+
+ 
+
