@@ -123,7 +123,7 @@ def main():
 			time.sleep(10)
 			openrelay.Run(10)
 			
-		if (Water == 9):	
+		if (Water == 10):	
 			openrelay.Run(60)
 
 	if (Water == 0):
