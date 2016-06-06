@@ -182,7 +182,7 @@ def decide():
 
 	waterlogic = 1;
 #Default to water
-	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog and RunNumberId = %s ;" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog and RunNumberId = %s );" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
@@ -369,44 +369,44 @@ def decide():
 
 
 		
-#if temp >= 12 < 16 then water and not in 23 hours
-	sq53 =  "update RunNumber set Water = 7 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=12 and SavedDataInt < 16 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
+# #if temp >= 12 < 16 then water and not in 23 hours
+	# sq53 =  "update RunNumber set Water = 7 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=12 and SavedDataInt < 16 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
-	try:
-	   # Execute the SQL command
-   		cursor.execute(sq53)
-	   # Commit your changes in the database
-		db.commit()
-		waterlogic = 7;
-	except Exception ,e:
-		print "failure with temp >=12 < 16 then water  -2 : "+ str(e)
-	   	db.rollback()
+	# try:
+	   # # Execute the SQL command
+   		# cursor.execute(sq53)
+	   # # Commit your changes in the database
+		# db.commit()
+		# waterlogic = 7;
+	# except Exception ,e:
+		# print "failure with temp >=12 < 16 then water  -2 : "+ str(e)
+	   	# db.rollback()
 
-#if temp >= 16  < 20 then water and not in 23 hours
-	sq53 =  "update RunNumber set Water = 8 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=16 and SavedDataInt < 20 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
+# #if temp >= 16  < 20 then water and not in 23 hours
+	# sq53 =  "update RunNumber set Water = 8 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=16 and SavedDataInt < 20 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
-	try:
-	   # Execute the SQL command
-   		cursor.execute(sq53)
-	   # Commit your changes in the database
-		db.commit()
-		waterlogic = 8;
-	except Exception ,e:
-		print "failure with temp >16  < 20 then water -2 : "+ str(e)
-	   	db.rollback()
+	# try:
+	   # # Execute the SQL command
+   		# cursor.execute(sq53)
+	   # # Commit your changes in the database
+		# db.commit()
+		# waterlogic = 8;
+	# except Exception ,e:
+		# print "failure with temp >16  < 20 then water -2 : "+ str(e)
+	   	# db.rollback()
 		
-#if temp >= 20  then water and not in 23 hours
-	sq53 =  "update RunNumber set Water = 9 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=20 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
+# #if temp >= 20  then water and not in 23 hours
+	# sq53 =  "update RunNumber set Water = 9 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=20 and Active = 1 ) and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) and RunNumberId = %s ;" %  (int(RunNumber))
 	
-	try:
-	   # Execute the SQL command
-   		cursor.execute(sq53)
-	   # Commit your changes in the database
-		db.commit()
-		waterlogic = 9;
-	except Exception ,e:
-		print "failure with temp >= 20  then water "
-	   	db.rollback()
+	# try:
+	   # # Execute the SQL command
+   		# cursor.execute(sq53)
+	   # # Commit your changes in the database
+		# db.commit()
+		# waterlogic = 9;
+	# except Exception ,e:
+		# print "failure with temp >= 20  then water "
+	   	# db.rollback()
 
 # if not watered in 23 hours water
 	# # sq53 =  "update RunNumber set Water = 3 where Water <= 0 and RunnumberId = %s and 23 >= ( select count(*) from (select distinct RunnumberId from RunNumber where Water <= 0 and timestampdiff(hour,now(),DateNow ) >= 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24 ) e);" %  (int(RunNumber))
