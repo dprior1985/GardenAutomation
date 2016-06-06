@@ -424,18 +424,16 @@ def decide():
 		
 #if schedule run
 	sq53 =  "update RunNumber set Water = 10 where RunnumberId = %s and hour(now()) in ( select Time from Schedule ) e);" %  (int(RunNumber))
+	
 	try:
 	   # Execute the SQL command
    		cursor.execute(sq53)
 	   # Commit your changes in the database
-	   db.commit()
-	   waterlogic = 10;
+		db.commit()
+		waterlogic = 10;
 	except:
-		print "-------------"
-		print sq53
-		print "error schedule run"
+		print "failure with temp >= 20  then water "
 	   	db.rollback()		
-		
 
 		
 
