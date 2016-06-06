@@ -431,8 +431,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 10;
-	except:
-		print "failure with temp >= 20  then water "
+	except Exception ,e:
+		print "failure with schedule run : "+ str(e)
 	   	db.rollback()		
 
 		
