@@ -190,8 +190,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 1;
-	except:
-		print "failure default to water"
+	except Exception ,e:
+		print "failure default to water : "+ str(e)
 	   	db.rollback()
 
 #if temp < 12 then dont water
@@ -203,7 +203,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = -1;
-	except:
+	except Exception ,e:
 		print "failure with temp <12 "
 	   	db.rollback()
 
@@ -215,8 +215,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 2;
-	except:
-		print "failure with water not exists"
+	except Exception ,e:
+		print "failure with water not exists : "+ str(e)
 	   	db.rollback()
 		
 		
@@ -229,8 +229,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 4;
-	except:
-		print "failure with temp >=12 < 16 then water "
+	except Exception ,e:
+		print "failure with temp >=12 < 16 then water  : "+ str(e)
 	   	db.rollback()
 
 #if temp >= 16  < 20 then water
@@ -242,8 +242,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 5;
-	except:
-		print "failure with temp >16  < 20 then water "
+	except Exception ,e:
+		print "failure with temp >16  < 20 then water  : "+ str(e)
 	   	db.rollback()
 		
 #if temp >= 20  then water
@@ -255,8 +255,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 6;
-	except:
-		print "failure with temp >= 20  then water "
+	except Exception ,e:
+		print "failure with temp >= 20  then water  : "+ str(e)
 	   	db.rollback()
 
 		
@@ -308,8 +308,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = -5;
-	except:	
-		print "failure with water exists"
+	except Exception ,e:	
+		print "failure with water exists : "+ str(e)
 	   	db.rollback()
 		
 		
@@ -334,7 +334,7 @@ def decide():
 		   # Commit your changes in the database
 			db.commit()
 			waterlogic = -3;
-		except:
+		except Exception ,e:
 			print "failure with before 6am or 9pm"
 			db.rollback()	
 	
@@ -347,10 +347,10 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = -6;
-	except:
+	except Exception ,e:
 		print "-------------"
 		print sq53
-		print "if not watered in 3 hours water"
+		print "if not watered in 3 hours water  : "+ str(e)
 	   	db.rollback()
 		
 # #if not watered in 23 hours water
@@ -378,8 +378,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 7;
-	except:
-		print "failure with temp >=12 < 16 then water "
+	except Exception ,e:
+		print "failure with temp >=12 < 16 then water  -2 : "+ str(e)
 	   	db.rollback()
 
 #if temp >= 16  < 20 then water and not in 23 hours
@@ -391,8 +391,8 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 8;
-	except:
-		print "failure with temp >16  < 20 then water "
+	except Exception ,e:
+		print "failure with temp >16  < 20 then water -2 : "+ str(e)
 	   	db.rollback()
 		
 #if temp >= 20  then water and not in 23 hours
@@ -404,7 +404,7 @@ def decide():
 	   # Commit your changes in the database
 		db.commit()
 		waterlogic = 9;
-	except:
+	except Exception ,e:
 		print "failure with temp >= 20  then water "
 	   	db.rollback()
 
@@ -423,7 +423,7 @@ def decide():
 
 		
 #if schedule run
-	sq53 =  "update RunNumber set Water = 10 where RunnumberId = %s and hour(now()) in ( select Time from Schedule ) e);" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = 10 where RunnumberId = %s and hour(now()) in ( select Time from Schedule );" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
