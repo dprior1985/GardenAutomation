@@ -182,7 +182,7 @@ def decide():
 
 	waterlogic = 1;
 #Default to water
-	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog and RunNumberId = %s );" %  (int(RunNumber))
+	sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog where RunNumberId = %s );" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
