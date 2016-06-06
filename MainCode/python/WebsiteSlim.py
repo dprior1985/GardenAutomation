@@ -190,7 +190,7 @@ if (vLastWaterLogic == "6" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 20  then water"
 if (vLastWaterLogic == "7" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water and not in 23 hours"	
-if (vLastWaterLogic == "+" ):
+if (vLastWaterLogic == "8" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water and not in 23 hours"	
 if (vLastWaterLogic == "9" ):
 	vLastWaterLogicDesc ="WATERED - temp >= 20  then water and not in 23 hours"

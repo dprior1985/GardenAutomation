@@ -428,6 +428,7 @@ def decide():
 	   # Execute the SQL command
    		cursor.execute(sq53)
 	   # Commit your changes in the database
+	   waterlogic = 10;
 		db.commit()
 	except:
 		print "-------------"
