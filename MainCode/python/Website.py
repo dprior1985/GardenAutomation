@@ -1,15 +1,17 @@
 import datetime
+from datetime import date
 import MySQLdb
 import time, sys
 import numpy
+import calendar
 
 # Open database connection
 db = MySQLdb.connect("localhost","danny","danny123","MYGARDEN" )
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
-
+my_date = date.today()
 vLastTimeWaterData = "000";
-
+vLastWaterLogic = "";
 vLastCheckDateData = "111";
 vLastCheckResultData = "222";
 vWeatherAPITempData = "333";
@@ -35,6 +37,11 @@ vforecast4 = "";
 LightAvg = []
 vLightsensor1 = "";
 vLightsensor2 = "";
+
+cursor.execute("select cast(Water as char(50)) from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
+for row in cursor.fetchall():
+
+	vLastWaterLogic = (row[0])
 
 cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'light sensor 1' ;" )
 for row in cursor.fetchall():
@@ -188,9 +195,57 @@ t = datetime.datetime(2012, 2, 23, 0, 0)
 #if (float(Avgtest) < 14):
 #	color = "Lightblue"
 #if (float(Avgtest) >= 14):
-color = "PeachPuff"
+
+if (calendar.day_name[my_date.weekday()] == "Monday"):
+	color = "PaleGoldenrod"
+if (calendar.day_name[my_date.weekday()] == "Tuesday"):
+	color = "Lavender"	
+if (calendar.day_name[my_date.weekday()] == "Wednesday"):
+	color = "PaleTurquoise"
+if (calendar.day_name[my_date.weekday()] == "Thursday"):
+	color = "Cornsilk"
+if (calendar.day_name[my_date.weekday()] == "Friday"):
+	color = "BlanchedAlmond"	
+if (calendar.day_name[my_date.weekday()] == "Saturday"):
+	color = "LightCoral"
+if (calendar.day_name[my_date.weekday()] == "Sunday"):
+	color = "PeachPuff"
 	
- 
+
+	
+vLastWaterLogicDesc =vLastWaterLogic
+
+if (vLastWaterLogic == "0" ):
+	vLastWaterLogicDesc ="NOT WATERED - ERROR NO CODE SELECTED"
+if (vLastWaterLogic == "-1" ):
+	vLastWaterLogicDesc ="NOT WATERED - <12 - toll cold"
+if (vLastWaterLogic == "-3" ):
+	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
+if (vLastWaterLogic == "-5" ):
+	vLastWaterLogicDesc ="NOT WATERED - Water exists"
+if (vLastWaterLogic == "-6" ):
+	vLastWaterLogicDesc ="NOT WATERED - Dont water within 3 hours of last water"
+
+if (vLastWaterLogic == "1" ):
+	vLastWaterLogicDesc ="WATERED - error setting 1 not used"
+if (vLastWaterLogic == "2" ):
+	vLastWaterLogicDesc ="WATERED - water not exists water"
+if (vLastWaterLogic == "3" ):
+	vLastWaterLogicDesc ="WATERED - Not watered in 23 hours"
+if (vLastWaterLogic == "4" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water"
+if (vLastWaterLogic == "5" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water"
+if (vLastWaterLogic == "6" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 20  then water"
+if (vLastWaterLogic == "7" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water and not in 23 hours"	
+if (vLastWaterLogic == "8" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water and not in 23 hours"	
+if (vLastWaterLogic == "9" ):
+	vLastWaterLogicDesc ="WATERED - temp >= 20  then water and not in 23 hours"
+if (vLastWaterLogic == "10" ):
+	vLastWaterLogicDesc ="WATERED - Scheduled Water Time"
 website="""
 <!DOCTYPE html>
 <html>
@@ -205,8 +260,8 @@ website="""
 <a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX3">Click here for current weather</a><br>
 <h3>Last time Watered (GMT):   %s</h3>
 <img src='%s' alt='Logo' style='width:200px;height:228px;'><br>
-<img src='Graph1.png' alt='Graph1' style='width:1000px;height:500px;'><br>
-<img src='Graph2.png' alt='Graph2' style='width:1000px;height:500px;'><br>
+<img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'><br>
+<img src='Graph2.png' alt='Graph2' style='width:500px;height:250px;'><br>
 <img src='LightGraph1.png' alt='Graph3' style='width:1000px;height:500px;'><br>
 <br>
 
@@ -261,8 +316,8 @@ website="""
   <tr>
     <th>Rain Sensor</th>
     <td>%s</td>
-    <th></th>
-    <td></td>
+    <th>Last Water Logic</th>
+    <td>%s</td>
   </tr>
   <tr>
     <th>External - Temp Sensor 1</th>
@@ -271,7 +326,7 @@ website="""
     <td>%s</td>
   </tr>
   <tr>
-    <th>Inside Bottle - Temp Sensor 2</th>
+    <th>With Pi - Temp Sensor 2</th>
     <td>%s</td>
     <th>Light Sensor 2</th>
     <td>%s</td>
@@ -313,6 +368,7 @@ website="""
 ,vWaterExistsData
 ,vforecast4 
 ,vRainData 
+,vLastWaterLogicDesc
 ,vTempsensor1
 ,vLightsensor1
 ,vTempsensor2
