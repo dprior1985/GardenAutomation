@@ -17,7 +17,7 @@ def Run(sec):
 		if (sec > 0):
 			GPIO.setmode(GPIO.BOARD)
 			GPIO.setup(relay,GPIO.OUT)
-			print("Water pump open")
+			print("Relay open")
 			print(datetime.now())
 			GPIO.output(relay,GPIO.LOW)
 			#os.system("sudo python /home/pi/Desktop/GardenAutomation/modules/segs.py")
@@ -26,7 +26,7 @@ def Run(sec):
 
 
 		GPIO.output(relay,GPIO.HIGH)
-		print("Water pump closed")
+		print("Replay Closed")
 		print(datetime.now())
 	
 	except:
