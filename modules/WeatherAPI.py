@@ -10,10 +10,11 @@ def API(API):
 	try:
 		if (API == "geolookup"):
 			#bexleyheath personal weather station				
-			f = urllib2.urlopen('http://api.wunderground.com/api/2bdf859af15fee8d/geolookup/conditions/q/PWS:IKENTBEX3.json')
+			f = urllib2.urlopen('http://api.wunderground.com/api/90b24aac53db4186/geolookup/conditions/q/PWS:IKENTBEX4.json')
+			
 		if (API =="forecast"):
 			#bexleyheath personal weather station				
-			f = urllib2.urlopen('http://api.wunderground.com/api/2bdf859af15fee8d/forecast/conditions/q/PWS:IKENTBEX3.json')
+			f = urllib2.urlopen('http://api.wunderground.com/api/90b24aac53db4186/forecast/conditions/q/PWS:IKENTBEX4.json')
 
 	#get API weather data from underground weather
 		json_string = f.read()
