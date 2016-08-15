@@ -1,3 +1,3 @@
 
-sudo python /home/pi/Desktop/GardenAutomation/MainCode/python/RunGardenSlim.py
-sudo python /home/pi/Desktop/GardenAutomation/MainCode/python/WebsiteSlim.py
+sudo python /home/pi/Desktop/GardenAutomation/MainCode/python/RunGarden.py
+sudo python /home/pi/Desktop/GardenAutomation/MainCode/python/Website.py
