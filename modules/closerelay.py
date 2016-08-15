@@ -13,6 +13,7 @@ relay = 38
 def Run(sec):
 
 	try:
+		GPIO.output(relay,GPIO.LOW)
 		GPIO.output(relay,GPIO.HIGH)
 		print("Replay Closed")
 		print(datetime.now())
