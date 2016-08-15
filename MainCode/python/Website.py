@@ -16,8 +16,8 @@ vLastCheckDateData = "111";
 vLastCheckResultData = "222";
 vWeatherAPITempData = "333";
 vWeatherAPIWeatherData = "444";
-vWaterExistsData = "555";
-vRainData = "666";
+vWaterExistsData = "";
+vRainData = "";
 vURL = "/home/pi/Desktop/GardenAutomation/Pictures/Default.jpg";
 vAPIUpdate = "";
 vAPIwind = "";
@@ -218,34 +218,38 @@ vLastWaterLogicDesc =vLastWaterLogic
 if (vLastWaterLogic == "0" ):
 	vLastWaterLogicDesc ="NOT WATERED - ERROR NO CODE SELECTED"
 if (vLastWaterLogic == "-1" ):
-	vLastWaterLogicDesc ="NOT WATERED - <12 - toll cold"
+	vLastWaterLogicDesc ="NOT WATERED - <5 - too cold"
+if (vLastWaterLogic == "-2" ):
+        vLastWaterLogicDesc ="NOT WATERED - its raining"
 if (vLastWaterLogic == "-3" ):
-	vLastWaterLogicDesc ="NOT WATERED - Dont Water bewteen 9PM and 6AM"
+	vLastWaterLogicDesc ="NOT WATERED - error -3"
 if (vLastWaterLogic == "-5" ):
-	vLastWaterLogicDesc ="NOT WATERED - Water exists"
+	vLastWaterLogicDesc ="NOT WATERED - error -5"
 if (vLastWaterLogic == "-6" ):
-	vLastWaterLogicDesc ="NOT WATERED - Dont water within 3 hours of last water"
+	vLastWaterLogicDesc ="NOT WATERED - error -6"
+if (vLastWaterLogic == "-10" ):
+        vLastWaterLogicDesc ="NOT WATERED - Not time to water -10"
 
 if (vLastWaterLogic == "1" ):
-	vLastWaterLogicDesc ="WATERED - error setting 1 not used"
+	vLastWaterLogicDesc ="WATERED - Default setting"
 if (vLastWaterLogic == "2" ):
-	vLastWaterLogicDesc ="WATERED - water not exists water"
+	vLastWaterLogicDesc ="WATERED - ERROR 2"
 if (vLastWaterLogic == "3" ):
-	vLastWaterLogicDesc ="WATERED - Not watered in 23 hours"
+	vLastWaterLogicDesc ="WATERED - temp >5 and < 12"
 if (vLastWaterLogic == "4" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16"
 if (vLastWaterLogic == "5" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20"
 if (vLastWaterLogic == "6" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 20  then water"
+	vLastWaterLogicDesc ="WATERED - temp >= 20"
 if (vLastWaterLogic == "7" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 12 < 16 then water and not in 23 hours"	
+	vLastWaterLogicDesc ="WATERED - error 7"	
 if (vLastWaterLogic == "8" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 16  < 20 then water and not in 23 hours"	
+	vLastWaterLogicDesc ="WATERED - error 8"	
 if (vLastWaterLogic == "9" ):
-	vLastWaterLogicDesc ="WATERED - temp >= 20  then water and not in 23 hours"
+	vLastWaterLogicDesc ="WATERED - error 9"
 if (vLastWaterLogic == "10" ):
-	vLastWaterLogicDesc ="WATERED - Scheduled Water Time"
+	vLastWaterLogicDesc ="WATERED - Scheduled Water Time - But selection should have been made"
 website="""
 <!DOCTYPE html>
 <html>
@@ -260,9 +264,9 @@ website="""
 <a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX3">Click here for current weather</a><br>
 <h3>Last time Watered (GMT):   %s</h3>
 <img src='%s' alt='Logo' style='width:200px;height:228px;'><br>
-<img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'><br>
+<img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'>
 <img src='Graph2.png' alt='Graph2' style='width:500px;height:250px;'><br>
-<img src='LightGraph1.png' alt='Graph3' style='width:1000px;height:500px;'><br>
+
 <br>
 
 
@@ -308,46 +312,22 @@ website="""
     <td>%s</td>
   </tr>
   <tr>
-    <th>Water Present?</th>
+    <th></th>
     <td>%s</td>
     <th>API Forecast</th>
     <td>%s</td>
   </tr>
   <tr>
-    <th>Rain Sensor</th>
+    <th></th>
     <td>%s</td>
     <th>Last Water Logic</th>
     <td>%s</td>
   </tr>
   <tr>
-    <th>External - Temp Sensor 1</th>
+    <th>Internal - Temp Sensor</th>
     <td>%s</td>
     <th>Inside Bottle - Light Sensor 1</th>
     <td>%s</td>
-  </tr>
-  <tr>
-    <th>With Pi - Temp Sensor 2</th>
-    <td>%s</td>
-    <th>Light Sensor 2</th>
-    <td>%s</td>
-  </tr>
-  <tr>
-    <th>Temp Sensor 3</th>
-    <td>%s</td>
-    <th></th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Temp Sensor 4</th>
-    <td>%s</td>
-    <th></th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Temp Sensor 5</th>
-    <td>%s</td>
-    <th></th>
-    <td></td>
   </tr>
 </table>
 </body>
@@ -369,13 +349,9 @@ website="""
 ,vforecast4 
 ,vRainData 
 ,vLastWaterLogicDesc
-,vTempsensor1
-,vLightsensor1
 ,vTempsensor2
-,vLightsensor2
-,vTempsensor3
-,vTempsensor4
-,vTempsensor5
+,vLightsensor1
+
 )
 
 
