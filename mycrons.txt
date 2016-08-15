@@ -25,8 +25,9 @@
 20 0 * * * sh /home/pi/Desktop/admin/Autopull.sh >> /home/pi/Desktop/Logs/AutoPull.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/RunSenor.py >> /home/pi/Desktop/Logs/TempSensors.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
+* * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth2.py  >> /home/pi/Desktop/Logs/graph2.log 2>&1
 0 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Senors.sh >> /home/pi/Desktop/Logs/Senors.log 2>&1
-2 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Website.sh >> /home/pi/Desktop/Logs/WebsiteSlim.log 2>&1
 30 0 * * * sh /home/pi/Desktop/GardenAutomation/InstallCrontabs.sh >> /home/pi/Desktop/Logs/InstallCrontabs.log 2>&1
 * * * * * python /home/pi/Desktop/admin/Wifi.py >> /home/pi/Desktop/admin/Wifi.log 2>&1
+@reboot python /home/pi/Desktop/GardenAutomation/modules/closerelay.py >> /home/pi/Desktop/GardenAutomation/modules/closerelay.log 2>&1
 
