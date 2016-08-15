@@ -69,12 +69,12 @@ def main():
 	print "forecast classmethod"
 	print(datetime.datetime.now())
 	forecastweather()
-	print "watar classmethod"
-	print(datetime.datetime.now())
-	water()
-	print "Rain classmethod"
-	print(datetime.datetime.now())	
-	rain()
+	#print "watar classmethod"
+	#print(datetime.datetime.now())
+	#water()
+	#print "Rain classmethod"
+	#print(datetime.datetime.now())	
+	#rain()
 	print "light classmethod"
 	print(datetime.datetime.now())
 	light()
@@ -85,7 +85,7 @@ def main():
 	   # Execute the SQL command
 	   	print "SQL3 exec"
 		print(datetime.datetime.now())
-   		cursor.execute(sql3)
+  		cursor.execute(sql3)
 	   # Commit your changes in the database
 		db.commit()
 	except:
@@ -95,29 +95,29 @@ def main():
 
 	decide()
 	
-	if (Water >= 2):
+	if (Water >= 1):
 		print "openrelay classmethod"
 		print(datetime.datetime.now())
 		if (Water >= 1):
-			if Water == 1
+			if (Water == 1):
 				SleepTime = 60
-			if Water == 2
+			if (Water == 2):
 				SleepTime = 60
-			if Water == 3
+			if (Water == 3):
 				SleepTime = 30
-			if Water == 4
+			if (Water == 4):
 				SleepTime = 60
-			if Water == 5
+			if (Water == 5):
 				SleepTime = 75
-			if Water == 6
+			if (Water == 6):
 				SleepTime = 90
-			if Water == 7
+			if (Water == 7):
 				SleepTime = 60
 			
 			
-			openrelay.Run(2)
-			sleep(SleepTime)
-			openrelay.Run(2)
+			openrelay.Run(SleepTime)
+			#sleep(SleepTime)
+			#openrelay.Run(2)
 
 
 	if (Water <= 0):
@@ -159,14 +159,14 @@ def temperature():
 	sql4 =  insert +" values('temp sensor','temp sensor 4','%s',1,now() );" % temperature4 
 	sql5 =  insert +" values('temp sensor','temp sensor 5','%s',1,now() );" % temperature5  
 
- 
+	print (sql2) 
 	# Execute the SQL command
   	cursor.execute(sql1)
 	cursor.execute(sql2)
 	cursor.execute(sql3)
 	cursor.execute(sql4)
 	cursor.execute(sql5)
-
+	db.commit()
 
 
 	
@@ -175,24 +175,44 @@ def decide():
 	global Water;
 
 
-	waterlogic = 1;
-	TimeToWater = 0;
+	waterlogic = -10;
+	TimeToWater = -1;
 
 	#if schedule run
-	sq53 =  "update RunNumber set Water = 10 where RunnumberId = %s and hour(now()) in ( select Time from Schedule );" %  (int(RunNumber))
+#	sq53 =  "update RunNumber set Water = 10 where RunnumberId = %s and hour(now()) in ( select Time from Schedule );" %  (int(RunNumber))
 	
 	try:
 	   # Execute the SQL command
-   		cursor.execute(sq53)
+ #  		cursor.execute(sq53)
 	   # Commit your changes in the database
-		db.commit()
-		TimeToWater = 1;
+#		db.commit()
+		cursor.execute("select 1 as Note from Schedule where  hour(now()) in ( select Time from Schedule ) limit 1")
+	        for row in cursor.fetchall():
+       		        TimeToWater = (row[0])
+
+		
+
 	except Exception ,e:
 		print "failure with schedule run : "+ str(e)
 	   	db.rollback()		
 
+        if (TimeToWater <= -1):
+               #Default to water
+                sq53 =  "update RunNumber set Water = -10 where  RunnumberId in (select RunNumberId from ControlLog where RunNumberId = %s );" %  (int(RunNumber))
 
-	if TimeToWater = 1 		
+                try:
+                   # Execute the SQL command
+                        cursor.execute(sq53)
+                   # Commit your changes in the database
+                        db.commit()
+                        waterlogic = -10;
+                except Exception ,e:
+                        print "not to schdule : "+ str(e)
+                        db.rollback()
+		
+		
+
+	if (TimeToWater >= 1): 		
 		#Default to water
 		sq53 =  "update RunNumber set Water = 1 where  RunnumberId in (select RunNumberId from ControlLog where RunNumberId = %s );" %  (int(RunNumber))
 		
@@ -206,8 +226,8 @@ def decide():
 			print "failure default to water : "+ str(e)
 			db.rollback()
 
-	#if temp < 12 then dont water
-		sq53 =  "update RunNumber set Water = -1 where Water >= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+	#if temp < 5 then dont water
+		sq53 =  "update RunNumber set Water = -1 where Water >= 0 and  RunnumberId in ( select RunNumberId from ControlLog where cast(SaveData as decimal(16,2)) < 5 and Active = 1 and ActionName = 'Weather API' and LogDescription = 'Temp C' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -240,7 +260,7 @@ def decide():
 
 
 	#if temp >= 5 < 12 then water
-		sq53 =  "update RunNumber set Water = 4 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=5 and SavedDataInt < 12 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq53 =  "update RunNumber set Water = 4 where Water <= 1 and  RunnumberId in ( select RunNumberId from ControlLog where cast(SaveData as decimal(16,2)) >=5 and cast(SaveData as decimal(16,2)) < 12 and Active = 1 and ActionName = 'Weather API' and LogDescription = 'Temp C' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -256,7 +276,7 @@ def decide():
 			
 			
 	#if temp >= 12 < 16 then water
-		sq53 =  "update RunNumber set Water = 4 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=12 and SavedDataInt < 16 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq53 =  "update RunNumber set Water = 4 where Water <= 1 and  RunnumberId in (select RunNumberId from ControlLog where cast(SaveData as decimal(16,2)) >=12 and cast(SaveData as decimal(16,2)) < 16  and Active = 1 and ActionName = 'Weather API' and LogDescription = 'Temp C' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -271,7 +291,7 @@ def decide():
 
 
 	#if temp >= 16  < 20 then water
-		sq53 =  "update RunNumber set Water = 5 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=16 and SavedDataInt < 20 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq53 =  "update RunNumber set Water = 5 where Water <= 1 and  RunnumberId in (select RunNumberId from ControlLog where cast(SaveData as decimal(16,2)) >=16 and cast(SaveData as decimal(16,2)) < 20 and Active = 1 and ActionName = 'Weather API' and LogDescription = 'Temp C' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -287,7 +307,7 @@ def decide():
 
 			
 	#if temp >= 20  then water
-		sq53 =  "update RunNumber set Water = 6 where Water <= 0 and  RunnumberId in (select RunNumberId from ControlLog where SavedDataInt >=20 and Active = 1 ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq53 =  "update RunNumber set Water = 6 where Water <= 1 and  RunnumberId in (select RunNumberId from ControlLog where cast(SaveData as decimal(16,2)) >=20 and Active = 1 and ActionName = 'Weather API' and LogDescription = 'Temp C' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -306,7 +326,7 @@ def decide():
 			
 
 	#if local senor says raining then dont water	
-		sq531 =  "update RunNumber set Water = -2 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where (ActionName like '%%Rain%%' or ActionName like '%%rain%%' ) and Active = 1 and SaveData = 'Yes' ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq531 =  "update RunNumber set Water = -2 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where (SaveData like '%%Rain%%' or SaveData like %%rain%%' ) and Active = 1 and ActionName = 'Weather API' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
@@ -509,7 +529,6 @@ def RunNumber():
 		RunNumber = (row[0])
 	
 	sql3 =  "update ControlLog set RunNumberId = %s ,Active = 1 where RunNumberId is null ;" %  (int(RunNumber))
-			
 	
 
 def weather():
