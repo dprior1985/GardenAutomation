@@ -34,7 +34,7 @@ y=0
 xa=0
 ya=0
 
-cursor.execute("select cast(SaveData as decimal(16,2)),Datenow from ControlLog where ActionName = 'Weather API' and LogDescription = 'Temp C' order by DateNow;" )
+cursor.execute("select cast(SaveData as decimal(16,2)),Datenow from ControlLog where ActionName = 'Weather API' and LogDescription = 'Temp C'  and subtime(now(), '48:00:00') <= DateNow order by DateNow;" )
 for row in cursor.fetchall():
 
 	x = (row[1])
