@@ -326,7 +326,7 @@ def decide():
 			
 
 	#if local senor says raining then dont water	
-		sq531 =  "update RunNumber set Water = -2 where Water > 0 and  RunnumberId in (select RunNumberId from ControlLog where (SaveData like '%%Rain%%' or SaveData like %%rain%%' ) and Active = 1 and ActionName = 'Weather API' ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq531 =  "update RunNumber set Water = -2 where Water > 0  and  RunnumberId in (select RunNumberId from ControlLog where LogDescription = 'Weather' and (SaveData like '%%Rain%%' or SaveData like %%rain%%' or SaveData like %%Drizzle%%' or SaveData like %%Showers%%' ) and Active = 1 and ActionName = 'Weather API' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
