@@ -34,7 +34,7 @@ y=0
 xa=0
 ya=0
 
-cursor.execute("select cast(Data as decimal(16,2)),Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '24:00:00') <= DateNow order by DateNow; " )
+cursor.execute("select cast(Data as decimal(16,2)),Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '48:00:00') <= DateNow order by DateNow; " )
 for row in cursor.fetchall():
 
 	xa = (row[1])
@@ -42,7 +42,7 @@ for row in cursor.fetchall():
 	x11.append(xa)
 	y11.append(ya)
 
-#cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '24:00:00') <= DateNow order by DateNow; " )
+#cursor.execute("select Data,Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '48:00:00') <= DateNow order by DateNow; " )
 
 #for row in cursor.fetchall():
 
@@ -50,7 +50,7 @@ for row in cursor.fetchall():
 #	y12.append(ya)
 
 
-pyplot.title('Temp Senors for last 24 hours')
+pyplot.title('Temp Senors for last 48 hours')
 
 pyplot.xlabel('Time')
 pyplot.ylabel('Temp C')
@@ -59,7 +59,7 @@ pyplot.grid(b='on')
 
 pyplot.legend(loc='best')
 
-pyplot.line = pyplot.plot(x11,y11, color='red',label='Inside Temp - Last 24 Hours')
+pyplot.line = pyplot.plot(x11,y11, color='red',label='Inside Temp - Last 48 Hours')
 
 
 pyplot.savefig('/var/www/Graph2.png')
