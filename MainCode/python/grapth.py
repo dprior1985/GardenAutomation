@@ -54,7 +54,7 @@ for row in cursor.fetchall():
 
 
 #pyplot.title('Temp Senors for last 24 hours')
-pyplot.title('API - Last 2 days')
+pyplot.title('API - Last 4 days')
 pyplot.xlabel('Time')
 pyplot.ylabel('Temp C')
 
