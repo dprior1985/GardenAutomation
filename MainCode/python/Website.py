@@ -266,6 +266,7 @@ website="""
 <img src='%s' alt='Logo' style='width:200px;height:228px;'><br>
 <img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'>
 <img src='Graph2.png' alt='Graph2' style='width:500px;height:250px;'><br>
+<img src='Graph3.png' alt='Graph2' style='width:1000px;height:500px;'><br>
 
 <br>
 
