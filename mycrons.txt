@@ -26,6 +26,7 @@
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/RunSenor.py >> /home/pi/Desktop/Logs/TempSensors.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth2.py  >> /home/pi/Desktop/Logs/graph2.log 2>&1
+55 23 * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth3.py  >> /home/pi/Desktop/Logs/graph3.log 2>&1
 0 * * * * sh /home/pi/Desktop/GardenAutomation/MainCode/scripts/Senors.sh >> /home/pi/Desktop/Logs/Senors.log 2>&1
 30 0 * * * sh /home/pi/Desktop/GardenAutomation/InstallCrontabs.sh >> /home/pi/Desktop/Logs/InstallCrontabs.log 2>&1
 45 * * * * python /home/pi/Desktop/admin/Wifi.py >> /home/pi/Desktop/admin/Wifi.log 2>&1
