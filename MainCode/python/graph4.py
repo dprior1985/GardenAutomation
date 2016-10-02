@@ -38,7 +38,7 @@ xa=0
 ya=0
 yb=0
 
-cursor.execute("select max(cast(SaveData as decimal(16,2))),min(cast(SaveData as decimal(16,2))),avg(cast(SaveData as decimal(16,2))),cast(Datenow as date) Datenow from ControlLog where ActionName = 'Weather API' and LogDescription = 'Temp C' group by cast(Datenow as date)   order by cast(Datenow as date) ;" )
+cursor.execute("select max(cast(SaveData as decimal(16,2))),min(cast(SaveData as decimal(16,2))),avg(cast(SaveData as decimal(16,2))),cast(Datenow as date) Datenow from ControlLog from SenorLog where SensorName = 'temp sensor 2'  order by cast(Datenow as date) ;" )
 for row in cursor.fetchall():
 
 	x = (row[3])
