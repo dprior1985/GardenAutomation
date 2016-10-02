@@ -38,7 +38,7 @@ xa=0
 ya=0
 yb=0
 
-cursor.execute("select max(cast(Data as decimal(16,2))),min(cast(Data as decimal(16,2))),avg(cast(Data as decimal(16,2))),cast(Datenow as date) Datenow from SenorLog where SensorName = 'temp sensor 2'  order by cast(Datenow as date) ;" )
+cursor.execute("select max(cast(Data as decimal(16,2))),min(cast(Data as decimal(16,2))),avg(cast(Data as decimal(16,2))),cast(Datenow as date) Datenow from SenorLog where SensorName = 'temp sensor 2'  group by cast(Datenow as date)  order by cast(Datenow as date) ;" )
 for row in cursor.fetchall():
 
 	x = (row[3])
