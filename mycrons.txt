@@ -34,7 +34,7 @@
 @reboot python /home/pi/Desktop/GardenAutomation/modules/closerelay.py >> /home/pi/Desktop/GardenAutomation/modules/closerelay.log 2>&1
 @reboot python /home/pi/SillyTweeter/SillyTweeter.py 'message' 'Dannyspi2.local Just came back online'
 10 * * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart1' '' 
-0,10,20,30,40,50 * * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart2' '' 
+0 * * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart2' '' 
 10 0 * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart3' '' 
 11 0 * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart4' '' 
 0 * * * *  python /home/pi/SillyTweeter/SillyTweeter.py 'CPU' '' 
