@@ -24,7 +24,7 @@
 
 20 0 * * * sh /home/pi/Desktop/admin/Autopull.sh >> /home/pi/Desktop/Logs/AutoPull.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/RunSenor.py >> /home/pi/Desktop/Logs/TempSensors.log 2>&1
-* * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
+5 * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth.py  >> /home/pi/Desktop/Logs/graph.log 2>&1
 * * * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth2.py  >> /home/pi/Desktop/Logs/graph2.log 2>&1
 55 23 * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/grapth3.py  >> /home/pi/Desktop/Logs/graph3.log 2>&1
 55 23 * * * python /home/pi/Desktop/GardenAutomation/MainCode/python/graph4.py  >> /home/pi/Desktop/Logs/graph4.log 2>&1
@@ -32,4 +32,8 @@
 30 0 * * * sh /home/pi/Desktop/GardenAutomation/InstallCrontabs.sh >> /home/pi/Desktop/Logs/InstallCrontabs.log 2>&1
 10,20,30,40,50 * * * * python /home/pi/Desktop/admin/Wifi.py >> /home/pi/Desktop/admin/Wifi.log 2>&1
 @reboot python /home/pi/Desktop/GardenAutomation/modules/closerelay.py >> /home/pi/Desktop/GardenAutomation/modules/closerelay.log 2>&1
-
+10 * * * * python /home/pi/SillyTweeter/SillyTweet.py 'chart1' '' >>/home/pi/SillyTweeter/SillyTweet_Chart1.log 2>&1
+0,10,20,30,40,50 * * * * python /home/pi/SillyTweeter/SillyTweet.py 'chart2' '' >>/home/pi/SillyTweeter/SillyTweet_Chart2.log 2>&1
+10 0 * * * python /home/pi/SillyTweeter/SillyTweet.py 'chart3' '' >>/home/pi/SillyTweeter/SillyTweet_Chart3.log 2>&1
+11 0 * * * python /home/pi/SillyTweeter/SillyTweet.py 'chart4' '' >>/home/pi/SillyTweeter/SillyTweet_Chart4.log 2>&1
+0 * * * *  python /home/pi/SillyTweeter/SillyTweet.py 'CPU' '' >>/home/pi/SillyTweeter/SillyTweet_CPU.log 2>&1
