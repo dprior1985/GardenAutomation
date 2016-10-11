@@ -38,3 +38,4 @@
 10 0 * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart3' '' 
 11 0 * * * python /home/pi/SillyTweeter/SillyTweeter.py 'chart4' '' 
 0 * * * *  python /home/pi/SillyTweeter/SillyTweeter.py 'CPU' '' 
+0 * * * *  python /home/pi/SillyTweeter/SillyTweeter.py 'tmep' '' 
