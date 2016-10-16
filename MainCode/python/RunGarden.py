@@ -100,19 +100,26 @@ def main():
 		print(datetime.datetime.now())
 		if (Water >= 1):
 			if (Water == 1):
-				SleepTime = 60
+			#	SleepTime = 60 #summer times
+				SleepTime = 20 #winter times
 			if (Water == 2):
-				SleepTime = 60
+			#	SleepTime = 60 #summer times
+				SleepTime = 20 #winter times
 			if (Water == 3):
-				SleepTime = 30
+			#	SleepTime = 30 #summer times
+				SleepTime = 10 #winter times
 			if (Water == 4):
-				SleepTime = 60
+			#	SleepTime = 60 #summer times
+				SleepTime = 20 #winter times
 			if (Water == 5):
-				SleepTime = 75
+			#	SleepTime = 75 #summer times
+				SleepTime = 30 #winter times
 			if (Water == 6):
-				SleepTime = 90
+			#	SleepTime = 90 #summer times
+				SleepTime = 30 #winter times			
 			if (Water == 7):
-				SleepTime = 60
+			#	SleepTime = 60 #summer times
+				SleepTime = 20 #winter times
 			
 			
 			openrelay.Run(SleepTime)
@@ -326,7 +333,7 @@ def decide():
 			
 
 	#if local senor says raining then dont water	
-		sq531 =  "update RunNumber set Water = -2 where Water > 0  and  RunnumberId in (select RunNumberId from ControlLog where LogDescription = 'Weather' and (SaveData like '%%Rain%%' or SaveData like %%rain%%' or SaveData like %%Drizzle%%' or SaveData like %%Showers%%' ) and Active = 1 and ActionName = 'Weather API' ) and RunNumberId = %s ;" %  (int(RunNumber))
+		sq531 =  "update RunNumber set Water = -2 where Water > 0  and  RunnumberId in (select RunNumberId from ControlLog where LogDescription = 'Weather' and (SaveData like ""%%Rain%%"" or SaveData like ""%%rain%%"" or SaveData like ""%%Drizzle%%"" or SaveData like ""%%Showers%%"" ) and Active = 1 and ActionName = 'Weather API' ) and RunNumberId = %s ;" %  (int(RunNumber))
 		
 		try:
 		   # Execute the SQL command
