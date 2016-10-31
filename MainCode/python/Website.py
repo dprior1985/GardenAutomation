@@ -38,6 +38,64 @@ LightAvg = []
 vLightsensor1 = "";
 vLightsensor2 = "";
 
+Hall = ""
+HallArray = []
+H00 = ""
+H01 = ""
+H02 = ""
+H03 = ""
+H04 = ""
+H05 = ""
+H06 = ""
+H07 = ""
+H08 = ""
+H09 = ""
+H10 = ""
+H11 = ""
+H12 = ""
+H13 = ""
+H14 = ""
+H15 = ""
+H16 = ""
+H17 = ""
+H18 = ""
+H19 = ""
+H20 = ""
+H21 = ""
+H22 = ""
+H23 = ""
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) < 24  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	Hall = (row[0])
+	HallArray.append(str(Hall))
+
+H00 = HallArray[0]
+H01 = HallArray[1] 
+H02 = HallArray[2]
+H03 = HallArray[3]
+H04 = HallArray[4]
+H05 = HallArray[5]
+H06 = HallArray[6]
+H07 = HallArray[7]
+H08 = HallArray[8]
+H09 = HallArray[9]
+H10 = HallArray[10]
+H11 = HallArray[11]
+H12 = HallArray[12]
+H13 = HallArray[13]
+H14 = HallArray[14]
+H15 = HallArray[15]
+H16 = HallArray[16]
+H17 = HallArray[17]
+H18 = HallArray[18]
+H19 = HallArray[19]
+H20 = HallArray[20]
+H21 = HallArray[21]
+H22 = HallArray[22]
+H23 = HallArray[23]
+
+
 cursor.execute("select cast(Water as char(50)) from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
 for row in cursor.fetchall():
 
@@ -330,6 +388,95 @@ website="""
     <th>Inside Bottle - Light Sensor 1</th>
     <td>%s</td>
   </tr>
+
+
+  
+   <tr>`
+    <th>23 hours ago </th>
+    <td>%s</td>
+    <th>22 hours ago</th>
+    <td>%s</td>
+  </tr>
+  
+  <tr>
+    <th>21 hours ago </th>
+    <td>%s</td>
+    <th>20 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>19 hours ago </th>
+    <td>%s</td>
+    <th>18 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>17 hours ago </th>
+    <td>%s</td>
+    <th>16 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>15 hours ago </th>
+    <td>%s</td>
+    <th>14 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>13 hours ago </th>
+    <td>%s</td>
+    <th>12 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>11 hours ago </th>
+    <td>%s</td>
+    <th>10 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>9 hours ago </th>
+    <td>%s</td>
+    <th>8 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>7 hours ago </th>
+    <td>%s</td>
+    <th>6 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+
+  <tr>
+    <th>5 hours ago </th>
+    <td>%s</td>
+    <th>4 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+
+  <tr>
+    <th>3 hours ago </th>
+    <td>%s</td>
+    <th>2 hours ago</th>
+    <td>%s</td>
+  </tr>  
+
+  <tr>
+    <th>1 hour ago </th>
+    <td>%s</td>
+    <th>0 hours ago</th>
+    <td>%s</td>
+  </tr>  
+  
 </table>
 </body>
 </html>
@@ -352,7 +499,30 @@ website="""
 ,vLastWaterLogicDesc
 ,vTempsensor2
 ,vLightsensor1
-
+,H00
+,H01
+,H02
+,H03
+,H04
+,H05
+,H06
+,H07
+,H08
+,H09
+,H10
+,H11
+,H12
+,H13
+,H14
+,H15
+,H16
+,H17
+,H18
+,H19
+,H20
+,H21
+,H22
+,H23
 )
 
 
@@ -419,3 +589,4 @@ io.close()
 
 print('SITE CREATED')
 print(datetime.datetime.now())
+
