@@ -38,6 +38,131 @@ LightAvg = []
 vLightsensor1 = "";
 vLightsensor2 = "";
 
+H00 = ""
+H01 = ""
+H02 = ""
+H03 = ""
+H04 = ""
+H05 = ""
+H06 = ""
+H07 = ""
+H08 = ""
+H09 = ""
+H10 = ""
+H11 = ""
+H12 = ""
+H13 = ""
+H14 = ""
+H15 = ""
+H16 = ""
+H17 = ""
+H18 = ""
+H19 = ""
+H20 = ""
+H21 = ""
+H22 = ""
+H23 = ""
+
+
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 0; " )
+for row in cursor.fetchall():
+	H00 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 1; " )
+for row in cursor.fetchall():
+	H01 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 2; " )
+for row in cursor.fetchall():
+	H02 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 3; " )
+for row in cursor.fetchall():
+	H03 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 4; " )
+for row in cursor.fetchall():
+	H04 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 5; " )
+for row in cursor.fetchall():
+	H05 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 6; " )
+for row in cursor.fetchall():
+	H06 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 7; " )
+for row in cursor.fetchall():
+	H07 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 8; " )
+for row in cursor.fetchall():
+	H08 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 9; " )
+for row in cursor.fetchall():
+	H09 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 10; " )
+for row in cursor.fetchall():
+	H10 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 11; " )
+for row in cursor.fetchall():
+	H11 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 12; " )
+for row in cursor.fetchall():
+	H12 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 13; " )
+for row in cursor.fetchall():
+	H13 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 14; " )
+for row in cursor.fetchall():
+	H14 = (row[0])
+
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 15; " )
+for row in cursor.fetchall():
+	H15 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 16; " )
+for row in cursor.fetchall():
+	H16 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 17; " )
+for row in cursor.fetchall():
+	H17 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 18; " )
+for row in cursor.fetchall():
+	H18 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 19; " )
+for row in cursor.fetchall():
+	H19 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 20; " )
+for row in cursor.fetchall():
+	H20 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 21; " )
+for row in cursor.fetchall():
+	H21 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 22; " )
+for row in cursor.fetchall():
+	H22 = (row[0])
+	
+cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(,DateNow) <= 23; " )
+for row in cursor.fetchall():
+	H23 = (row[0])
+	
+
+
+
 cursor.execute("select cast(Water as char(50)) from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
 for row in cursor.fetchall():
 
