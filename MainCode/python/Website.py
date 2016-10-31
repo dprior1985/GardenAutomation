@@ -63,100 +63,99 @@ H21 = ""
 H22 = ""
 H23 = ""
 
-
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 0; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 0; " )
 for row in cursor.fetchall():
 	H00 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 1; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 1; " )
 for row in cursor.fetchall():
 	H01 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 2; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 2; " )
 for row in cursor.fetchall():
 	H02 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 3; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 3; " )
 for row in cursor.fetchall():
 	H03 = (row[0])
 	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 4; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 4; " )
 for row in cursor.fetchall():
 	H04 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 5; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 5; " )
 for row in cursor.fetchall():
 	H05 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 6; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 6; " )
 for row in cursor.fetchall():
 	H06 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 7; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 7; " )
 for row in cursor.fetchall():
 	H07 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 8; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 8; " )
 for row in cursor.fetchall():
 	H08 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 9; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 9; " )
 for row in cursor.fetchall():
 	H09 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 10; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 10; " )
 for row in cursor.fetchall():
 	H10 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 11; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 11; " )
 for row in cursor.fetchall():
 	H11 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 12; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 12; " )
 for row in cursor.fetchall():
 	H12 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 13; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 13; " )
 for row in cursor.fetchall():
 	H13 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 14; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 14; " )
 for row in cursor.fetchall():
 	H14 = (row[0])
 
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 15; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 15; " )
 for row in cursor.fetchall():
 	H15 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 16; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 16; " )
 for row in cursor.fetchall():
 	H16 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 17; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 17; " )
 for row in cursor.fetchall():
 	H17 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 18; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 18; " )
 for row in cursor.fetchall():
 	H18 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 19; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 19; " )
 for row in cursor.fetchall():
 	H19 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 20; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 20; " )
 for row in cursor.fetchall():
 	H20 = (row[0])
 	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 21; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 21; " )
 for row in cursor.fetchall():
 	H21 = (row[0])
-	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) <= 22; " )
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 22; " )
 for row in cursor.fetchall():
 	H22 = (row[0])
 	
-cursor.execute("select SaveData from ControlLog where RunNumberId = (select max(RunNumberId) from RunNumber) and ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) = 0 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(,DateNow) <= 23; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) <= 24  and minute(DateNow) <= 15 and hour(DateNow) = 23; " )
 for row in cursor.fetchall():
 	H23 = (row[0])
 	
@@ -455,6 +454,100 @@ website="""
     <th>Inside Bottle - Light Sensor 1</th>
     <td>%s</td>
   </tr>
+
+   <tr>
+    <th></th>
+    <td></td>
+    <th></th>
+    <td></td>
+  </tr>
+
+   <tr>
+    <th>0000 hours </th>
+    <td>%s</td>
+    <th>0100 hours</th>
+    <td>%s</td>
+  </tr>
+  
+  <tr>
+    <th>0200 hours </th>
+    <td>%s</td>
+    <th>0300 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>0400 hours </th>
+    <td>%s</td>
+    <th>0500 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>0600 hours </th>
+    <td>%s</td>
+    <th>0700 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>0800 hours </th>
+    <td>%s</td>
+    <th>0900 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>1000 hours </th>
+    <td>%s</td>
+    <th>1100 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>1200 hours </th>
+    <td>%s</td>
+    <th>1300 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>1400 hours </th>
+    <td>%s</td>
+    <th>1500 hours</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>1600 hours </th>
+    <td>%s</td>
+    <th>1700 hours</th>
+    <td>%s</td>
+  </tr>
+
+
+  <tr>
+    <th>1800 hours </th>
+    <td>%s</td>
+    <th>1900 hours</th>
+    <td>%s</td>
+  </tr>
+
+
+  <tr>
+    <th>2000 hours </th>
+    <td>%s</td>
+    <th>2100 hours</th>
+    <td>%s</td>
+  </tr>  
+
+  <tr>
+    <th>2200 hours </th>
+    <td>%s</td>
+    <th>2300 hours</th>
+    <td>%s</td>
+  </tr>  
+  
 </table>
 </body>
 </html>
@@ -477,7 +570,30 @@ website="""
 ,vLastWaterLogicDesc
 ,vTempsensor2
 ,vLightsensor1
-
+,H00
+,H01
+,H02
+,H03
+,H04
+,H05
+,H06
+,H07
+,H08
+,H09
+,H10
+,H11
+,H12
+,H13
+,H14
+,H15
+,H16
+,H17
+,H18
+,H19
+,H20
+,H21
+,H22
+,H23
 )
 
 
@@ -544,3 +660,4 @@ io.close()
 
 print('SITE CREATED')
 print(datetime.datetime.now())
+
