@@ -65,37 +65,99 @@ H21 = ""
 H22 = ""
 H23 = ""
 
-cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) < 24  and minute(DateNow) <= 15 order by DateNow ; " )
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 0  and minute(DateNow) <= 15 order by DateNow ; " )
 for row in cursor.fetchall():
-	Hall = (row[0])
-	HallArray.append(str(Hall))
+	H00 = (row[0])
 
-H00 = HallArray[0]
-H01 = HallArray[1] 
-H02 = HallArray[2]
-H03 = HallArray[3]
-H04 = HallArray[4]
-H05 = HallArray[5]
-H06 = HallArray[6]
-H07 = HallArray[7]
-H08 = HallArray[8]
-H09 = HallArray[9]
-H10 = HallArray[10]
-H11 = HallArray[11]
-H12 = HallArray[12]
-H13 = HallArray[13]
-H14 = HallArray[14]
-H15 = HallArray[15]
-H16 = HallArray[16]
-H17 = HallArray[17]
-H18 = HallArray[18]
-H19 = HallArray[19]
-H20 = HallArray[20]
-H21 = HallArray[21]
-H22 = HallArray[22]
-H23 = HallArray[23]
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 1  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H01 = (row[0])
 
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 2  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H02 = (row[0])
 
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 3  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H03 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 4  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H04 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 5  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H05 = (row[0])
+	
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 6  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H06 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 7  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H07 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 8  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H08 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 9  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H09 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 10  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H10 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 11  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H11 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 12  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H12 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 13  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H13 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 14  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H14 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 15  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H15 = (row[0])
+	
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 16  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H16 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 17  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H17 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 18  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H18 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 20  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H20 = (row[0])
+	
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 21  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H21 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 22  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H22 = (row[0])
+
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 23  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H23 = (row[0])
+
+	
 cursor.execute("select cast(Water as char(50)) from RunNumber where RunNumberId = (select max(RunNumberId) from RunNumber) ;" )
 for row in cursor.fetchall():
 
@@ -392,88 +454,88 @@ website="""
 
   
    <tr>`
-    <th>23 hours ago </th>
+    <th>0 hours ago </th>
     <td>%s</td>
-    <th>22 hours ago</th>
+    <th>1 hour ago</th>
     <td>%s</td>
   </tr>
   
   <tr>
-    <th>21 hours ago </th>
+    <th>2 hours ago </th>
     <td>%s</td>
-    <th>20 hours ago</th>
-    <td>%s</td>
-  </tr>
-
-  <tr>
-    <th>19 hours ago </th>
-    <td>%s</td>
-    <th>18 hours ago</th>
+    <th>3 hours ago</th>
     <td>%s</td>
   </tr>
 
   <tr>
-    <th>17 hours ago </th>
+    <th>4 hours ago </th>
     <td>%s</td>
-    <th>16 hours ago</th>
-    <td>%s</td>
-  </tr>
-
-  <tr>
-    <th>15 hours ago </th>
-    <td>%s</td>
-    <th>14 hours ago</th>
+    <th>5 hours ago</th>
     <td>%s</td>
   </tr>
 
   <tr>
-    <th>13 hours ago </th>
+    <th>6 hours ago </th>
     <td>%s</td>
-    <th>12 hours ago</th>
-    <td>%s</td>
-  </tr>
-
-  <tr>
-    <th>11 hours ago </th>
-    <td>%s</td>
-    <th>10 hours ago</th>
+    <th>7 hours ago</th>
     <td>%s</td>
   </tr>
 
   <tr>
-    <th>9 hours ago </th>
+    <th>8 hours ago </th>
     <td>%s</td>
-    <th>8 hours ago</th>
+    <th>9 hours ago</th>
     <td>%s</td>
   </tr>
 
   <tr>
-    <th>7 hours ago </th>
+    <th>10 hours ago </th>
     <td>%s</td>
-    <th>6 hours ago</th>
+    <th>11 hours ago</th>
     <td>%s</td>
   </tr>
 
+  <tr>
+    <th>12 hours ago </th>
+    <td>%s</td>
+    <th>13 hours ago</th>
+    <td>%s</td>
+  </tr>
 
   <tr>
-    <th>5 hours ago </th>
+    <th>14 hours ago </th>
     <td>%s</td>
-    <th>4 hours ago</th>
+    <th>15 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+  <tr>
+    <th>16 hours ago </th>
+    <td>%s</td>
+    <th>17 hours ago</th>
     <td>%s</td>
   </tr>
 
 
   <tr>
-    <th>3 hours ago </th>
+    <th>18 hours ago </th>
     <td>%s</td>
-    <th>2 hours ago</th>
+    <th>19 hours ago</th>
+    <td>%s</td>
+  </tr>
+
+
+  <tr>
+    <th>20 hours ago </th>
+    <td>%s</td>
+    <th>21 hours ago</th>
     <td>%s</td>
   </tr>  
 
   <tr>
-    <th>1 hour ago </th>
+    <th>22 hours ago </th>
     <td>%s</td>
-    <th>0 hours ago</th>
+    <th>23 hours ago</th>
     <td>%s</td>
   </tr>  
   
