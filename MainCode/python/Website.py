@@ -141,6 +141,10 @@ cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from Con
 for row in cursor.fetchall():
 	H18 = (row[0])
 
+cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 19  and minute(DateNow) <= 15 order by DateNow ; " )
+for row in cursor.fetchall():
+	H19 = (row[0])
+
 cursor.execute("select concat_ws(' ',SaveData ,  cast(DateNow as char)) from ControlLog where ActionName = 'Weather API' and LogDescription = 'Weather' and datediff(now(),DateNow ) >= 0 and datediff(now(),DateNow ) <=24 and timestampdiff(HOUR,DateNow,NOW()) = 20  and minute(DateNow) <= 15 order by DateNow ; " )
 for row in cursor.fetchall():
 	H20 = (row[0])
