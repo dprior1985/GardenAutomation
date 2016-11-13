@@ -193,7 +193,7 @@ def decide():
  #  		cursor.execute(sq53)
 	   # Commit your changes in the database
 #		db.commit()
-		cursor.execute("select 1 as Note from Schedule where  hour(now()) in ( select Time from Schedule ) limit 1")
+		cursor.execute("select 1 as Note from Schedule where  minute(now()) <= 15 and hour(now()) in ( select Time from Schedule ) limit 1")
 	        for row in cursor.fetchall():
        		        TimeToWater = (row[0])
 
