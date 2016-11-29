@@ -385,7 +385,7 @@ website="""
 </head>
 <body bgcolour = "%s" >
 <h2>Garden System:</h2>
-<a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX3">Click here for current weather</a><br>
+<a href ="http://www.wunderground.com/personal-weather-station/dashboard?ID=IKENTBEX13">Click here for current weather</a><br>
 <h3>Last time Watered (GMT):   %s</h3>
 <img src='%s' alt='Logo' style='width:200px;height:228px;'><br>
 <img src='Graph1.png' alt='Graph1' style='width:500px;height:250px;'>
