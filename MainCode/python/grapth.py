@@ -60,8 +60,14 @@ pyplot.ylabel('Temp C')
 
 pyplot.grid(b='on')
 
+#pyplot.line = pyplot.plot(x1,y1, color='green',label='API Weather Station') 
+pyplot.line = pyplot.plot(x1,y1,'bo', color='green',label='API Weather Station')  #added 'bo'
 
-pyplot.line = pyplot.plot(x1,y1, color='green',label='API Weather Station')
+#NEW TEST :) START
+pyplot.grid(True)
+pyplot.style.use('bmh') #http://matplotlib.org/gallery.html#lines_bars_and_markers
+pyplot.gcf().autofmt_xdate() #http://stackoverflow.com/questions/1574088/plotting-time-in-python-with-matplotlib
+#NEW TEST :) END
 #pyplot.line = pyplot.plot(x1,y2, color='red',label='Temp Senor 2')
 
 pyplot.legend(loc='best')
