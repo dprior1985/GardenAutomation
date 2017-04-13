@@ -95,6 +95,7 @@ def main():
 
 	decide()
 	
+	
 	if (Water >= 1):
 		print "openrelay classmethod"
 		print(datetime.datetime.now())
@@ -134,8 +135,7 @@ def main():
 
 	print "END"
 	print(datetime.datetime.now())
-
-
+	RunNumberClean()
 # disconnect from server
 	db.close()
 
@@ -537,6 +537,16 @@ def RunNumber():
 	
 	sql3 =  "update ControlLog set RunNumberId = %s ,Active = 1 where RunNumberId is null ;" %  (int(RunNumber))
 	
+	
+def RunNumberClean()
+	
+	sql =  "delete from RunNumber;"
+	
+	try:
+	   # Execute the SQL command
+   		cursor.execute(sql)
+	   # Commit your changes in the database
+		db.commit()
 
 def weather():
 
