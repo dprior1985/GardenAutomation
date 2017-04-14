@@ -135,7 +135,7 @@ def main():
 
 	print "END"
 	print(datetime.datetime.now())
-	RunNumberClean()
+	#RunNumberClean()
 # disconnect from server
 	db.close()
 
@@ -538,15 +538,15 @@ def RunNumber():
 	sql3 =  "update ControlLog set RunNumberId = %s ,Active = 1 where RunNumberId is null ;" %  (int(RunNumber))
 	
 	
-def RunNumberClean():
+#def RunNumberClean():
 	
-	sql =  "delete from RunNumber;"
+#	sql =  "delete from RunNumber;"
 	
-	try:
+#	try:
 	   # Execute the SQL command
-   		cursor.execute(sql)
+#   		cursor.execute(sql)
 	   # Commit your changes in the database
-		db.commit()
+#		db.commit()
 
 def weather():
 
