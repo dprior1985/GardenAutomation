@@ -135,7 +135,7 @@ def main():
 
 	print "END"
 	print(datetime.datetime.now())
-	RunNumberClean()
+	#RunNumberClean()
 # disconnect from server
 	db.close()
 
