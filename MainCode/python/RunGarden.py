@@ -135,7 +135,7 @@ def main():
 
 	print "END"
 	print(datetime.datetime.now())
-	#RunNumberClean()
+	RunNumberClean()
 # disconnect from server
 	db.close()
 
@@ -538,7 +538,7 @@ def RunNumber():
 	sql3 =  "update ControlLog set RunNumberId = %s ,Active = 1 where RunNumberId is null ;" %  (int(RunNumber))
 	
 	
-def RunNumberClean()
+def RunNumberClean():
 	
 	sql =  "delete from RunNumber;"
 	
