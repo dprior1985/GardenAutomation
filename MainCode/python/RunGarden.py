@@ -101,26 +101,26 @@ def main():
 		print(datetime.datetime.now())
 		if (Water >= 1):
 			if (Water == 1):
-			#	SleepTime = 60 #summer times
-				SleepTime = 20 #winter times
+				SleepTime = 60 #summer times
+			#	SleepTime = 20 #winter times
 			if (Water == 2):
-			#	SleepTime = 60 #summer times
-				SleepTime = 20 #winter times
+				SleepTime = 60 #summer times
+			#	SleepTime = 20 #winter times
 			if (Water == 3):
 			#	SleepTime = 30 #summer times
-				SleepTime = 10 #winter times
+			#	SleepTime = 10 #winter times
 			if (Water == 4):
-			#	SleepTime = 60 #summer times
-				SleepTime = 20 #winter times
+				SleepTime = 60 #summer times
+			#	SleepTime = 20 #winter times
 			if (Water == 5):
-			#	SleepTime = 75 #summer times
-				SleepTime = 30 #winter times
+				SleepTime = 75 #summer times
+			#	SleepTime = 30 #winter times
 			if (Water == 6):
-			#	SleepTime = 90 #summer times
-				SleepTime = 30 #winter times			
+				SleepTime = 90 #summer times
+			#	SleepTime = 30 #winter times			
 			if (Water == 7):
-			#	SleepTime = 60 #summer times
-				SleepTime = 20 #winter times
+				SleepTime = 60 #summer times
+			#	SleepTime = 20 #winter times
 			
 			
 			openrelay.Run(SleepTime)
