@@ -34,7 +34,7 @@ y=0
 xa=0
 ya=0
 
-cursor.execute("select cast(Data as decimal(16,2)),Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '48:00:00') <= DateNow order by DateNow; " )
+cursor.execute("select cast(Data as decimal(16,2)),Datenow from SenorLog where SensorName = 'temp sensor 2' and subtime(now(), '96:00:00') <= DateNow order by DateNow; " )
 for row in cursor.fetchall():
 
 	xa = (row[1])
@@ -59,7 +59,7 @@ pyplot.grid(b='on')
 
 pyplot.legend(loc='best')
 
-pyplot.line = pyplot.plot(x11,y11, color='red',label='Inside Temp - Last 48 Hours')
+pyplot.line = pyplot.plot(x11,y11, color='red',label='Inside Temp - Last 4 days')
 
 
 pyplot.savefig('/var/www/Graph2.png')
