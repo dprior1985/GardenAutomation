@@ -107,7 +107,7 @@ def main():
 				SleepTime = 60 #summer times
 			#	SleepTime = 20 #winter times
 			if (Water == 3):
-			#	SleepTime = 30 #summer times
+				SleepTime = 30 #summer times
 			#	SleepTime = 10 #winter times
 			if (Water == 4):
 				SleepTime = 60 #summer times
